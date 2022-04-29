@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 
@@ -9,16 +9,32 @@ const Menu = () => {
     return (
         <View style={styles.menuContainer}>
             <TouchableOpacity onPress={() => navigation.navigate("Courses")}>
-                <Text>Courses</Text>
+                <Image
+                    style={styles.icon}
+                    source={require('../../assets/course.png')}
+                />
+                {/* <Text>Courses</Text> */}
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate("Students")}>
-                <Text>Students</Text>
+                <Image
+                    style={styles.icon}
+                    source={require('../../assets/student.png')}
+                />
+                {/* <Text>Students</Text> */}
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate("AboutUs")}>
-                <Text>Aboutus</Text>
+                <Image
+                    style={styles.icon}
+                    source={require('../../assets/about.png')}
+                />
+                {/* <Text>Aboutus</Text> */}
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate("Contact")}>
-                <Text>Contact</Text>
+                <Image
+                    style={styles.icon}
+                    source={require('../../assets/contact.png')}
+                />
+                {/* <Text>Contact</Text> */}
             </TouchableOpacity>
         </View>
     )
@@ -29,11 +45,15 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
-        paddingVertical: 20,
-        marginBottom: 20,
+        paddingVertical: 5,
+        // marginBottom: 20,
         borderWidth: .5,
         borderColor: "#c3c3c3",
         paddingHorizontal: 5,
+    },
+    icon: {
+        width: "100%",
+        aspectRatio: 1
     }
 })
 

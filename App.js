@@ -15,19 +15,19 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name="Home">
+        <Stack.Screen name="Home" options={{ headerShown: false }}>
           {props => <Home {...props} name="Express Learning" />}
         </Stack.Screen>
-        <Stack.Screen name="Courses">
+        <Stack.Screen name="Courses" options={{ headerTitleAlign: "center" }}>
           {props => <Courses {...props} />}
         </Stack.Screen>
-        <Stack.Screen name="Students">
+        <Stack.Screen name="Students" options={{ headerTitleAlign: "center" }}>
           {props => <Students {...props} />}
         </Stack.Screen>
-        <Stack.Screen name="AboutUs">
+        <Stack.Screen name="AboutUs" options={{ headerTitleAlign: "center" }}>
           {props => <AboutUs {...props} />}
         </Stack.Screen>
-        <Stack.Screen name="Contact">
+        <Stack.Screen name="Contact" options={{ headerTitleAlign: "center" }}>
           {props => <Contact {...props} />}
         </Stack.Screen>
       </Stack.Navigator>
