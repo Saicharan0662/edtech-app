@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         alignItems: "center",
         paddingVertical: 5,
-        // marginBottom: 20,
         borderWidth: .5,
         borderColor: "#c3c3c3",
         paddingHorizontal: 5,
