@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingHorizontal: 24,
         position: 'relative',
-        bottom: "5%"
+        bottom: "5%",
+        paddingTop: 40,
     },
     userCard: {
         width: "100%",
