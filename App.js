@@ -7,6 +7,7 @@ import Courses from './src/screens/Courses';
 import Students from './src/screens/Students';
 import AboutUs from './src/screens/AboutUs';
 import Contact from './src/screens/Contact';
+import CourseDetails from './src/screens/CourseDetails';
 
 export default function App() {
 
@@ -29,6 +30,9 @@ export default function App() {
         </Stack.Screen>
         <Stack.Screen name="Contact" options={{ headerTitleAlign: "center" }}>
           {props => <Contact {...props} />}
+        </Stack.Screen>
+        <Stack.Screen name="CourseDetails" options={{ headerTitleAlign: "center", title: "Course Details" }}>
+          {props => <CourseDetails {...props} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
