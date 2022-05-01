@@ -4,7 +4,7 @@ import Menu from '../components/Menu'
 
 const Home = ({ name }) => {
     return (
-        <View>
+        <View style={{ height: "100%" }}>
             <View style={styles.homeContainer}>
                 <Image
                     style={styles.img}
@@ -17,7 +17,7 @@ const Home = ({ name }) => {
                     <Text style={styles.des}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores eveniet unde facilis veritatis, adipisci doloribus voluptates, incidunt explicabo dolorum ea pariatur iure est inventore.</Text>
                 </View>
             </View>
-            <View>
+            <View style={{ height: "10%" }}>
                 <Menu />
             </View>
         </View>
