@@ -1,18 +1,22 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native'
+import { StyleSheet, Text, View, FlatList, ActivityIndicator } from 'react-native'
 import React, { useState, useEffect } from 'react'
 
 const Students = () => {
 
     const [user, setUser] = useState(null)
+    const [isLoading, setIsLoading] = useState(false)
 
     const getUsers = async () => {
+        setIsLoading(true)
         try {
             const res = await fetch("https://jsonplaceholder.typicode.com/users")
             const usr = await res.json()
             // console.log(usr)
             setUser(usr)
+            setIsLoading(false)
         } catch (error) {
             console.log(error)
+            setIsLoading(false)
         }
     }
 
@@ -22,25 +26,38 @@ const Students = () => {
 
     return (
         <View style={styles.studentCont}>
-            <FlatList
-                data={user}
-                keyExtractor={(item) => item.id}
-                showsVerticalScrollIndicator={false}
-                renderItem={({ item }) => {
-                    return (
-                        <View style={styles.userCard}>
-                            <Text style={styles.nameStyle}>{item.name}</Text>
-                            <Text style={styles.text}>{item.email}</Text>
-                            <Text style={styles.text}>{item.company.name}</Text>
-                        </View>
-                    )
-                }}
-            />
+            {isLoading ?
+                <View style={styles.loader}>
+                    <ActivityIndicator size="large" color="purple" />
+                </View>
+                :
+                <View>
+                    <FlatList
+                        data={user}
+                        keyExtractor={(item) => item.id}
+                        showsVerticalScrollIndicator={false}
+                        renderItem={({ item }) => {
+                            return (
+                                <View style={styles.userCard}>
+                                    <Text style={styles.nameStyle}>{item.name}</Text>
+                                    <Text style={styles.text}>{item.email}</Text>
+                                    <Text style={styles.text}>{item.company.name}</Text>
+                                </View>
+                            )
+                        }}
+                    />
+                </View>
+            }
         </View>
     )
 }
 
 const styles = StyleSheet.create({
+    loader: {
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100%"
+    },
     studentCont: {
         justifyContent: 'center',
         alignItems: 'center',
